@@ -1,4 +1,4 @@
-init: docker-down-clear docker-pull docker-build password docker-up
+init: docker-down-clear docker-pull docker-build docker-up
 up: docker-up
 down: docker-down
 
@@ -16,6 +16,3 @@ docker-pull:
 
 docker-build:
 	docker-compose build
-
-password:
-	docker run registry:2.6 htpasswd -Bbn registry password > htpasswd
