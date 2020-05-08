@@ -1,15 +1,18 @@
 version: '3.7'
 services:
-    registry:
-        image: registry:2
-        environment:
-            REGISTRY_AUTH: htpasswd
-            REGISTRY_AUTH_HTPASSWD_REALM: Realm
-            REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+    nginx:
+        image: nginx:alpine
         ports:
             - "5000:5000"
         volumes:
-            - ./htpasswd:/auth/htpasswd
+            - ./docker/development/nginx/conf.d:/etc/nginx/conf.d
+            - ./htpasswd:/etc/nginx/auth/htpasswd
+        depends_on:
+            - registry
+
+    registry:
+        image: registry:2
+        volumes:
             - registry:/var/lib/registry
 
 volumes:
