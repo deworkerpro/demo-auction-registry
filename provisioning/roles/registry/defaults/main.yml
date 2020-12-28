@@ -1,3 +1,4 @@
 certbot_email: mail@deworker.pro
 certbot_hosts:
     - registry.demo-auction.deworker.pro
+    - cache-registry.demo-auction.deworker.pro
