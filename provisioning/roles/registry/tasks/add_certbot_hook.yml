@@ -2,4 +2,5 @@
 -   name: Add Certbot hook
     lineinfile:
         path: /etc/letsencrypt/cli.ini
-        line: "post-hook = /bin/sh -c 'cd /home/deploy/registry && docker-compose restart nginx'"
+        line: "post-hook = /bin/sh -c 'cd /home/deploy/registry && docker compose restart nginx'"
+        search_string: 'post-hook'
