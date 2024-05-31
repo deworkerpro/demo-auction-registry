@@ -35,6 +35,15 @@
         update_cache: yes
     notify: Start docker on boot
 
+-   name: Docker configuration
+    copy:
+        src: files/daemon.json
+        dest: /etc/docker/daemon.json
+        owner: root
+        group: root
+        mode: 0644
+    notify: Reload docker
+
 -   name: Set periodic Docker prune
     cron:
         name: docker-prune

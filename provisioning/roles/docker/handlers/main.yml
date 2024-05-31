@@ -4,3 +4,8 @@
         name: docker
         state: started
         enabled: yes
+
+-   name: Reload docker
+    systemd:
+        name: docker
+        state: reloaded

@@ -25,7 +25,7 @@ services:
         image: registry:2
         restart: always
         environment:
-            REGISTRY_PROXY_REMOTEURL: https://registry-1.docker.io
+            REGISTRY_PROXY_REMOTEURL: https://dockerhub.timeweb.cloud
             REGISTRY_STORAGE_DELETE_ENABLED: 1
         volumes:
             - cache-registry:/var/lib/registry
